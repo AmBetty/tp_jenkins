@@ -19,7 +19,7 @@ app.use(express.json());
 // });
 app.use(bodyParser.json());
 
-const orders = []; // Stockage des contacts en mémoire
+const orders = []; 
 
 app.get('/', (req, res) => {
     res.send('Welcome to the Contact Manager API');
