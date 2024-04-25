@@ -2,7 +2,7 @@ const request = require('supertest');
 const app = require('../app');
 let server;
 
-const contacts = []; 
+const orders = []; 
 
 beforeAll((done) => {
     server = app.listen(5001, () => {
@@ -23,4 +23,5 @@ describe('API Tests', () => {
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
     });
+    
 });
