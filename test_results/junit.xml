@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="1" failures="1" errors="0" time="3.058">
+  <testsuite name="API Tests" errors="0" failures="1" skipped="0" timestamp="2024-04-25T10:17:35" time="2.861" tests="1">
+    <testcase classname="API Tests GET /order - should return all order" name="API Tests GET /order - should return all order" time="0.086">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 404
+    at Object.toBe (C:\Users\ambet\OneDrive\Documents\GitHub\tp_jenkins\test\api.test.js:14:37)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
