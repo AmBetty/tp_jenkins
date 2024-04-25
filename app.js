@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.json());
-console.log(process.env.DB_URL +"/"+ process.env.DB_NAME)
 // mongoose.connect(process.env.DB_URL +"/"+ process.env.DB_NAME, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
@@ -27,10 +26,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/orders', (req, res) => {
-    res.status(200).json(contacts);
+  console.log("GOOOOOOOOODDDDD");
+    res.status(200).json(orders);
 });
 
 app.post('/orders', (req, res) => {
+    const { date, client, numeroProduit } = req.body;
+    if (!date || !client || !numeroProduit) {
+        return res.status(400).send({ message: "All fields are required" });
+    }
+    console.log("GOOOOOOOOODDDDD");
     const newOrder = { id: orders.length + 1, date, client, numeroProduit };
     contacts.push(newOrder);
     res.status(201).send(newOrder);

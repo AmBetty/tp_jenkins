@@ -17,6 +17,7 @@ afterAll((done) => {
         done();
     });
 });
+
 describe('API Tests', () => {
     it('GET /order - should return all order', async () => {
         const response = await request(server).get('/orders');
@@ -26,10 +27,9 @@ describe('API Tests', () => {
     it('POST /order - should create a new contact', async () => {
         const newOrder = {
             date: '12/04/2024',
-            client: 'NGING',
+            client: 'GNING',
             numerProduit: '1234567890'
         };
-        
         const response = await request(server).post('/orders').send(newOrder);
         expect(response.statusCode).toBe(201);
         expect(response.body).toMatchObject(newOrder);
