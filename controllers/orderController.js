@@ -13,16 +13,18 @@ exports.createOrder = async (req, res) => {
   }
 };
 
-exports.getAllOrders = async (req, res) => {
-    console.log("YESSSIIIIRRRRR")
-  try {
-    const orders = await Order.find();
-    res.json(orders);
-    console.log(res.json)
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
+
+
+// exports.getAllOrders = async (req, res) => {
+//     console.log("YESSSIIIIRRRRR")
+//   try {
+//     const orders = await Order.find();
+//     res.json(orders);
+//     console.log(res.json)
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 
 exports.updateOrder = async (req, res) => {
   try {
