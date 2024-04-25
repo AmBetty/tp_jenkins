@@ -33,6 +33,7 @@ describe('API Tests', () => {
         const response = await request(server).post('/orders').send(newOrder);
         expect(response.statusCode).toBe(201);
         expect(response.body).toMatchObject(newOrder);
+        console.log()
     });
     
 });
