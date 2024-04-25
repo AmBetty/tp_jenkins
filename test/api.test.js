@@ -23,5 +23,16 @@ describe('API Tests', () => {
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
     });
+    it('POST /order - should create a new contact', async () => {
+        const newOrder = {
+            date: '12/04/2024',
+            client: 'NGING',
+            numerProduit: '1234567890'
+        };
+        
+        const response = await request(server).post('/orders').send(newOrder);
+        expect(response.statusCode).toBe(201);
+        expect(response.body).toMatchObject(newOrder);
+    });
     
 });

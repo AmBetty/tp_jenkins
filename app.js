@@ -20,7 +20,7 @@ console.log(process.env.DB_URL +"/"+ process.env.DB_NAME)
 // });
 app.use(bodyParser.json());
 
-const contacts = []; // Stockage des contacts en mémoire
+const orders = []; // Stockage des contacts en mémoire
 
 app.get('/', (req, res) => {
     res.send('Welcome to the Contact Manager API');
@@ -28,6 +28,12 @@ app.get('/', (req, res) => {
 
 app.get('/orders', (req, res) => {
     res.status(200).json(contacts);
+});
+
+app.post('/orders', (req, res) => {
+    const newOrder = { id: orders.length + 1, date, client, numeroProduit };
+    contacts.push(newOrder);
+    res.status(201).send(newOrder);
 });
 
 
