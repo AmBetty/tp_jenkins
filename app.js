@@ -26,7 +26,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/orders', (req, res) => {
-  console.log("GOOOOOOOOODDDDD");
     res.status(200).json(orders);
 });
 
@@ -35,9 +34,8 @@ app.post('/orders', (req, res) => {
     if (!date || !client || !numeroProduit) {
         return res.status(400).send({ message: "All fields are required" });
     }
-    console.log("GOOOOOOOOODDDDD");
     const newOrder = { id: orders.length + 1, date, client, numeroProduit };
-    contacts.push(newOrder);
+    orders.push(newOrder);
     res.status(201).send(newOrder);
 });
 

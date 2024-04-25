@@ -28,7 +28,7 @@ describe('API Tests', () => {
         const newOrder = {
             date: '12/04/2024',
             client: 'GNING',
-            numerProduit: '1234567890'
+            numeroProduit: '1234567890'
         };
         const response = await request(server).post('/orders').send(newOrder);
         expect(response.statusCode).toBe(201);
