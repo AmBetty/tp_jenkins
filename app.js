@@ -6,9 +6,6 @@ const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 app.use(express.json());
-console.log("=============================")
-console.log("=============================")
-console.log("=============================")
 console.log(process.env.DB_URL +"/"+ process.env.DB_NAME)
 mongoose.connect(process.env.DB_URL +"/"+ process.env.DB_NAME, {
   useNewUrlParser: true,
@@ -17,9 +14,9 @@ mongoose.connect(process.env.DB_URL +"/"+ process.env.DB_NAME, {
 
 app.use('/api', orderRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
-});
+// app.listen(process.env.PORT, () => {
+//   console.log(`Server is running on port ${process.env.PORT}`);
+// });
 
 module.exports = app;
 

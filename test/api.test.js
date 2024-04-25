@@ -10,7 +10,7 @@ beforeAll((done) => {
 });
 describe('API Tests', () => {
     it('GET /order - should return all order', async () => {
-        const response = await request(server).get('/order');
+        const response = await request(server).get('/orders');
         expect(response.statusCode).toBe(200);
         expect(response.body).toBeInstanceOf(Array);
     });
